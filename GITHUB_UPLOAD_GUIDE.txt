@@ -1,0 +1,56 @@
+🚀 GITHUB UPLOAD GUIDE - Netflix Clone
+========================================
+
+QUICK STEPS (Already Done by Script):
+✓ Git repository initialized
+✓ Files added to staging
+✓ First commit created
+
+NOW YOU NEED TO DO:
+===================
+
+STEP 1: Create GitHub Repository
+---------------------------------
+1. Go to: https://github.com/new
+2. Repository name: netflix-clone
+3. Description: Full-stack Netflix clone with React, Node.js, MongoDB
+4. Keep it PUBLIC (for free deployment)
+5. DON'T initialize with README (we already have files)
+6. Click "Create repository"
+
+STEP 2: Copy Your Repository URL
+---------------------------------
+After creating, you'll see a URL like:
+https://github.com/YOUR-USERNAME/netflix-clone.git
+
+Copy this URL!
+
+STEP 3: Push to GitHub
+---------------------------------
+Run these commands (replace YOUR-USERNAME):
+
+git remote add origin https://github.com/YOUR-USERNAME/netflix-clone.git
+git branch -M main
+git push -u origin main
+
+Enter your GitHub username and password when prompted.
+(Use Personal Access Token instead of password)
+
+STEP 4: Verify Upload
+---------------------------------
+Refresh your GitHub repository page.
+You should see all your files uploaded!
+
+WHAT'S NEXT:
+============
+After GitHub upload is complete, you can:
+1. Deploy backend to Render (connects to GitHub)
+2. Deploy frontend to Vercel (connects to GitHub)
+3. Both platforms will auto-deploy on git push!
+
+NEED HELP?
+==========
+- Create GitHub account: https://github.com/signup
+- Generate Personal Access Token: 
+  Settings → Developer settings → Personal access tokens → Generate new token
+  (Select: repo, workflow scopes)

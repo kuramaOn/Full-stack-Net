@@ -1,0 +1,94 @@
+🚀 NETFLIX CLONE - DEPLOYMENT CHECKLIST
+========================================
+
+BEFORE YOU START:
+□ MongoDB Atlas account created
+□ GitHub repository is up to date
+□ All changes committed and pushed
+
+STEP 1: INSTALL CLIS (Run once)
+□ npm install -g vercel
+□ npm install -g render
+
+STEP 2: MONGODB ATLAS SETUP
+□ Login: https://cloud.mongodb.com/
+□ Create/Select cluster
+□ Get connection string (replace <password>)
+□ Whitelist all IPs (0.0.0.0/0)
+□ Copy URI for later
+
+STEP 3: DEPLOY BACKEND (Render)
+□ Go to: https://dashboard.render.com/
+□ Click "New +" → "Web Service"
+□ Connect GitHub repo
+□ Configure:
+   Name: netflix-clone-backend
+   Build: cd server && npm install
+   Start: cd server && npm start
+□ Add Environment Variables:
+   MONGODB_URI=your_mongodb_uri
+   JWT_SECRET=generate_random_string
+   CLIENT_URL=will_add_after_frontend
+   NODE_ENV=production
+   PORT=5000
+□ Click "Create Web Service"
+□ Wait for deployment (5-10 min)
+□ Copy backend URL (e.g., https://xxx.onrender.com)
+
+STEP 4: DEPLOY FRONTEND (Vercel)
+
+Option A - Automated Script:
+□ Open PowerShell in project root
+□ Run: .\deploy.ps1
+□ Enter backend URL when prompted
+□ Follow Vercel prompts
+
+Option B - Manual:
+□ Update client/.env.production with backend URL
+□ Run: cd client
+□ Run: vercel login
+□ Run: vercel --prod
+□ Follow prompts:
+   - Project name: netflix-clone
+   - Directory: ./
+   - Build: npm run build
+   - Output: dist
+□ Copy frontend URL
+
+STEP 5: UPDATE CORS
+□ Go back to Render dashboard
+□ Select your backend service
+□ Environment → Add Variable:
+   CLIENT_URL=your_vercel_url
+□ Service will auto-restart
+
+STEP 6: TEST DEPLOYMENT
+□ Visit frontend URL
+□ Test login (demo credentials)
+□ Browse content
+□ Play a video
+□ Check profile page
+□ Test admin dashboard (if admin)
+
+DONE! 🎉
+Your Netflix clone is live!
+
+URLs TO SAVE:
+- Frontend: ___________________________
+- Backend:  ___________________________
+- Database: MongoDB Atlas
+
+COSTS:
+- Vercel: $0 (free tier)
+- Render: $0 (free tier - sleeps after 15 min)
+- MongoDB: $0 (free 512MB)
+
+UPGRADE OPTIONS (if needed):
+- Render Starter: $7/month (no sleep)
+- Vercel Pro: $20/month (more features)
+
+TROUBLESHOOTING:
+- Frontend blank? Check browser console
+- CORS error? Verify CLIENT_URL in Render
+- DB error? Check MongoDB URI and whitelist
+- Logs: Vercel dashboard & Render dashboard

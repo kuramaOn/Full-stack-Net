@@ -20,7 +20,6 @@ import AdminDashboard from './pages/admin/Dashboard';
 import AdminContent from './pages/admin/Content';
 import AdminUsers from './pages/admin/Users';
 import AdminSettings from './pages/admin/Settings';
-import Analytics from './pages/admin/Analytics';
 import BulkOperations from './pages/admin/BulkOperations';
 import ContentScheduler from './pages/admin/ContentScheduler';
 
@@ -77,7 +76,6 @@ function App() {
           <Route index element={<AdminDashboard />} />
           <Route path="content" element={<AdminContent />} />
           <Route path="users" element={<AdminUsers />} />
-          <Route path="analytics" element={<Analytics />} />
           <Route path="bulk" element={<BulkOperations />} />
           <Route path="scheduler" element={<ContentScheduler />} />
           <Route path="settings" element={<AdminSettings />} />

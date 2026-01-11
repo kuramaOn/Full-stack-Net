@@ -23,7 +23,6 @@ import AdminSettings from './pages/admin/Settings';
 import Analytics from './pages/admin/Analytics';
 import BulkOperations from './pages/admin/BulkOperations';
 import ContentScheduler from './pages/admin/ContentScheduler';
-import ActivityLogs from './pages/admin/ActivityLogs';
 
 // Protected Route Component
 const ProtectedRoute = ({ children, adminOnly = false }) => {
@@ -81,7 +80,6 @@ function App() {
           <Route path="analytics" element={<Analytics />} />
           <Route path="bulk" element={<BulkOperations />} />
           <Route path="scheduler" element={<ContentScheduler />} />
-          <Route path="logs" element={<ActivityLogs />} />
           <Route path="settings" element={<AdminSettings />} />
         </Route>
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiHome, FiFilm, FiUsers, FiSettings, FiLogOut, FiBarChart2, FiUpload, FiCalendar, FiActivity, FiMenu } from 'react-icons/fi';
+import { FiHome, FiFilm, FiUsers, FiSettings, FiLogOut, FiBarChart2, FiUpload, FiCalendar, FiMenu } from 'react-icons/fi';
 import { useAuthStore } from '../../store/authStore';
 import { iconPresets, getGlowAnimation } from '../../utils/iconAnimations';
 
@@ -15,7 +15,6 @@ const AdminLayout = () => {
     { name: 'Analytics', path: '/admin/analytics', icon: FiBarChart2 },
     { name: 'Bulk Operations', path: '/admin/bulk', icon: FiUpload },
     { name: 'Scheduler', path: '/admin/scheduler', icon: FiCalendar },
-    { name: 'Activity Logs', path: '/admin/logs', icon: FiActivity },
     { name: 'Settings', path: '/admin/settings', icon: FiSettings },
   ];
 

@@ -4,6 +4,8 @@ import { FiBell, FiX, FiCheck } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL || '/api';
+
 const NotificationDropdown = () => {
   const [show, setShow] = useState(false);
   const [notifications, setNotifications] = useState([]);
@@ -19,7 +21,7 @@ const NotificationDropdown = () => {
 
   const fetchNotifications = async () => {
     try {
-      const response = await axios.get('/api/notifications');
+      const response = await axios.get(`${API_URL}/notifications`);
       setNotifications(response.data.data);
       setUnreadCount(response.data.unreadCount);
     } catch (error) {
@@ -29,7 +31,7 @@ const NotificationDropdown = () => {
 
   const handleMarkAsRead = async (id) => {
     try {
-      await axios.put(`/api/notifications/${id}/read`);
+      await axios.put(`${API_URL}/notifications/${id}/read`);
       fetchNotifications();
     } catch (error) {
       console.error('Error marking as read:', error);
@@ -38,7 +40,7 @@ const NotificationDropdown = () => {
 
   const handleMarkAllAsRead = async () => {
     try {
-      await axios.put('/api/notifications/read-all');
+      await axios.put(`${API_URL}/notifications/read-all`);
       fetchNotifications();
     } catch (error) {
       console.error('Error marking all as read:', error);

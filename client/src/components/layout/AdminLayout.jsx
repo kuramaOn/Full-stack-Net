@@ -31,11 +31,12 @@ const AdminLayout = () => {
 
       {/* Sidebar */}
       <motion.aside
-        initial={{ x: -300 }}
+        initial={false}
         animate={{ x: 0 }}
         className={`${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } lg:translate-x-0 fixed lg:relative w-64 h-full glass-effect-strong border-r border-glacier-500/20 z-50 transition-transform duration-300 lg:transition-none`}
+        } lg:translate-x-0 fixed lg:relative w-64 h-full glass-effect-strong border-r border-glacier-500/20 z-50 transition-transform duration-300 ease-in-out lg:transition-none`}
+        onClick={() => setSidebarOpen(false)}
       >
         <div className="p-6">
           <motion.h1
@@ -48,7 +49,7 @@ const AdminLayout = () => {
           <p className="text-sm text-ice-gray mt-1">Welcome, {user?.name}</p>
         </div>
 
-        <nav className="px-4 space-y-2">
+        <nav className="px-4 space-y-2" onClick={(e) => e.stopPropagation()}>
           {navItems.map((item, index) => (
             <motion.div
               key={item.path}
